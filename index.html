@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cesar Libarino — Gestor de tráfego que também constrói o funil</title>
+<meta name="description" content="Gestor de tráfego que também constrói o funil. Meta Ads, copy, páginas e tracking na mesma pessoa.">
+<meta property="og:title" content="Cesar Libarino — Gestor de tráfego que também constrói o funil">
+<meta property="og:description" content="Meta Ads, copy, páginas e tracking na mesma pessoa: menos retrabalho e decisão baseada em CPA.">
+<meta property="og:type" content="website">
+<!-- Para aparecer imagem ao colar o link: <meta property="og:image" content="https://SEU-DOMINIO.vercel.app/foto-perfil.jpg"> -->
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#f4f4fb;--card:#fff;--ink:#12122b;--mute:#5d5f7a;--line:#e0e0ee;--accent:#4b3df0;--accent2:#ff5a4e;--accent-ink:#fff;--chip:#ececfb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0c1a;--card:#14152b;--ink:#eeeefc;--mute:#9b9dc0;--line:#25274a;--accent:#8f86ff;--accent2:#ff7a6e;--accent-ink:#0b0c1a;--chip:#1c1e3d}}
+:root[data-theme="dark"]{--bg:#0b0c1a;--card:#14152b;--ink:#eeeefc;--mute:#9b9dc0;--line:#25274a;--accent:#8f86ff;--accent2:#ff7a6e;--accent-ink:#0b0c1a;--chip:#1c1e3d}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+section{padding:48px 0 8px}
+h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:0 0 16px;letter-spacing:-.025em}
+h1 .nm{display:block;font-size:.5em;font-weight:600;color:var(--mute);letter-spacing:0;margin-bottom:8px}
+h1 .hl{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:22px;margin:0 0 18px;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+h2:before{content:"";width:26px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+h3{margin:0 0 6px;font-size:18px}
+p{margin:0 0 12px}.mute{color:var(--mute)}
+.hero{padding-top:64px}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.28;z-index:0;pointer-events:none}
+.b1{width:340px;height:340px;background:var(--accent);top:-80px;right:-80px;animation:float 14s ease-in-out infinite}
+.b2{width:260px;height:260px;background:var(--accent2);top:260px;left:-90px;animation:float 18s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+.tag{display:inline-block;background:var(--chip);color:var(--accent);padding:5px 13px;border-radius:99px;font-size:13px;font-weight:600;margin-bottom:16px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--accent-ink);position:relative;overflow:hidden;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:not(.o):after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
+.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.o:hover{border-color:var(--accent)}
+.btn:focus-visible,summary:focus-visible,.theme:focus-visible{outline:3px solid var(--accent2);outline-offset:2px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .25s,border-color .25s}
+.grid .card:hover,.projgrid .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.num{font-size:32px;font-weight:800;letter-spacing:-.02em;color:var(--accent);line-height:1.1}
+.lbl{font-size:13px;color:var(--mute);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--chip);border-radius:8px;padding:5px 11px;font-size:14px;white-space:nowrap}
+.case .k{font-size:13px;color:var(--mute);margin-bottom:6px}
+ul{padding-left:18px;margin:8px 0 0}li{margin-bottom:5px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:12px}
+summary{cursor:pointer;font-weight:600}
+.hero-grid{display:flex;gap:28px;align-items:center;flex-wrap:wrap-reverse}
+.hero-text{flex:1 1 340px;min-width:0}
+.ph{position:relative;overflow:hidden;background:var(--chip);border:1px dashed var(--line);display:grid;place-items:center;color:var(--mute);font-size:12px;text-align:center;padding:8px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:100%}
+.avatar{width:200px;height:200px;border-radius:50%;flex:0 0 auto;margin:0 auto;box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--accent);animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--accent)}50%{box-shadow:0 0 0 4px var(--bg),0 0 0 11px var(--accent2)}}
+.gallery{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.gallery .ph{aspect-ratio:1/1;border-radius:14px}
+.gallery .ph:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+@media (max-width:520px){.gallery .ph:first-child{grid-column:span 2;grid-row:span 1;aspect-ratio:2/1}}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.proj .ph{aspect-ratio:16/10;border:0;border-bottom:1px dashed var(--line);border-radius:0}
+.proj .body{padding:16px 18px 18px}
+.projgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:14px}
+.case dl{margin:10px 0 0;display:grid;gap:8px}
+.case dt{font-size:12px;color:var(--accent);font-weight:700}
+.case dd{margin:0;color:var(--mute);font-size:15px}
+.case dd.res{color:var(--ink);font-weight:600}
+.pillar ul{margin:0;list-style:none;padding:0}
+.pillar li{padding-left:16px;position:relative;color:var(--mute);font-size:15px}
+.pillar li:before{content:"•";position:absolute;left:0;color:var(--accent2)}
+.more{margin-top:14px}
+.main-card{border-color:var(--accent);background:linear-gradient(160deg,var(--card),var(--chip))}
+.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:8px;width:max-content;animation:marq 40s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+footer{padding:48px 0 56px;text-align:center}
+footer h2{justify-content:center}
+.theme{position:fixed;right:14px;top:calc(env(safe-area-inset-top,0px) + 12px);background:var(--card);border:1px solid var(--line);border-radius:99px;width:38px;height:38px;cursor:pointer;color:var(--ink);font-size:16px;z-index:5}
+/* Movimento: sequência de entrada do hero (único momento orquestrado) */
+.js .in{opacity:0;transform:translateY(18px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--d,0)*120ms)}
+@keyframes up{to{opacity:1;transform:none}}
+/* Revelação suave das seções seguintes */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important}
+ .js .in,.js .rv{opacity:1;transform:none}
+ html{scroll-behavior:auto}
+}
+.tools{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tool{display:flex;gap:14px;align-items:center;padding:14px 16px}
+.ico{flex:0 0 46px;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:17px;color:#fff;letter-spacing:-.02em;transition:transform .3s}
+.tool:hover .ico{transform:rotate(-8deg) scale(1.08)}
+.ico svg{width:24px;height:24px}
+.tool h3{font-size:16px;margin:0}.tool p{margin:0;font-size:14px}
+.i-ps{background:#0a2a52;color:#4cc2ff}.i-ca{background:linear-gradient(135deg,#00c4cc,#7d2ae8)}
+.i-cc{background:#111;color:#fff}.i-ac{background:#2b5cff}.i-ia{background:linear-gradient(135deg,#8f86ff,#ff5a4e)}.i-ga{background:#f59e0b}
+</style>
+</head>
+<body>
+<button class="theme" id="theme" aria-label="Alternar tema">◐</button>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div class="wrap">
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <span class="tag in" style="--d:0">Tráfego pago · Funis de venda · Direct Response</span>
+      <h1 class="in" style="--d:1"><span class="nm">Cesar Libarino</span>Gestor de tráfego que <span class="hl">também constrói o funil.</span></h1>
+      <p class="in" style="--d:2;font-size:18px;margin:0 0 10px;max-width:640px">Meta Ads, copy, páginas e tracking na mesma pessoa: menos retrabalho, campanha no ar mais rápido e decisão baseada em CPA, não em achismo.</p>
+      <p class="mute in" style="--d:3;max-width:640px">+5 anos em Meta Ads e Direct Response, no Brasil e nos EUA, depois de 4 anos em vendas ativas no mercado financeiro. Já operei do anúncio ao checkout em emagrecimento, nutra, renda extra e negócios locais.</p>
+      <div class="btns in" style="--d:4">
+        <a class="btn" href="https://wa.me/5531996313037" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn o" href="#cases">Ver resultados</a>
+      </div>
+    </div>
+    <!-- FOTO PROFISSIONAL: salve como foto-perfil.jpg na mesma pasta do index.html -->
+    <div class="ph avatar in" style="--d:2">foto-perfil.jpg<img src="foto-perfil.jpg" alt="Cesar Libarino" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>Em números</h2>
+  <div class="grid">
+    <div class="card"><div class="num"><span data-count="5">5</span>+ anos</div><div class="lbl">Tráfego pago e funis de venda</div></div>
+    <div class="card"><div class="num"><span data-count="4">4</span> anos</div><div class="lbl">Vendas e prospecção ativa no mercado financeiro</div></div>
+    <div class="card"><div class="num">BR + EUA</div><div class="lbl">Dois mercados operados do zero</div></div>
+    <div class="card"><div class="num">5 dígitos</div><div class="lbl">Funil Quiz + VSL de emagrecimento, montado do zero</div></div>
+  </div>
+</section>
+
+<section id="cases" class="rv">
+  <h2>Cases</h2>
+  <div class="grid">
+    <div class="card case"><div class="k">Emagrecimento · Brasil</div><h3>Quiz + VSL para nutricionista</h3>
+      <dl><dt>Contexto</dt><dd>Nutricionista sem funil estruturado.</dd>
+      <dt>O que fiz</dt><dd>Estratégia, páginas, copy, quiz, VSL e campanhas, do zero e sozinho.</dd>
+      <dt>Resultado</dt><dd class="res">Faturamento de 5 dígitos, com a conta fechando no CPA.</dd></dl></div>
+    <div class="card case"><div class="k">Estofados · Curso online</div><h3>Funil completo para expert</h3>
+      <dl><dt>Contexto</dt><dd>Expert de higienização de estofados, em um nicho novo para mim.</dd>
+      <dt>O que fiz</dt><dd>Estruturei o funil inteiro: páginas, oferta e tráfego.</dd>
+      <dt>Resultado</dt><dd class="res">R$ 3k faturados em um único dia.</dd></dl></div>
+    <div class="card case"><div class="k">Nutra · EUA</div><h3>Direct Response em inglês</h3>
+      <dl><dt>Contexto</dt><dd>Operação própria no mercado americano.</dd>
+      <dt>O que fiz</dt><dd>Presell, criativos, VSL, tracking e contingência (BM, proxy, multilogin).</dd>
+      <dt>Resultado</dt><dd class="res">Operação completa rodando do zero nos EUA.</dd></dl></div>
+    <div class="card case"><div class="k">Operação própria · Tráfego direto</div><h3>Oferta low ticket</h3>
+      <dl><dt>Contexto</dt><dd>Operação em sociedade para o público brasileiro.</dd>
+      <dt>O que fiz</dt><dd>Campanhas, estrutura do funil e tracking.</dd>
+      <dt>Resultado</dt><dd class="res">Operação ativa, com oferta, funil e tracking rodando.</dd></dl></div>
+  </div>
+  <p class="mute" style="margin-top:14px;font-size:14px">Prints e dashboards de cada case disponíveis sob solicitação.</p>
+</section>
+
+<section class="rv">
+  <h2>Habilidades</h2>
+  <p class="mute" style="max-width:640px">Especialista em Meta Ads e funis, capaz de assumir qualquer etapa, do anúncio até a venda.</p>
+  <div class="grid" style="margin-top:14px">
+    <div class="card pillar"><h3>Aquisição</h3><ul>
+      <li>Meta Ads em tráfego direto, lançamentos, low ticket, negócios locais e perpétuo</li>
+      <li>Teste de criativo, público e oferta (ABO para validar, CBO para escalar)</li>
+      <li>Leitura de hook rate, hold rate, CTR e CPA</li>
+      <li>Mercados: Brasil e EUA; emagrecimento, renda extra, estofados e negócios locais</li></ul></div>
+    <div class="card pillar"><h3>Conversão</h3><ul>
+      <li>Funis: Quiz + VSL, presell, página de vendas, checkout, e-mail e WhatsApp</li>
+      <li>Copy de anúncio, página e VSL; estruturação de oferta</li>
+      <li>Landing pages e quizzes em WordPress, Atomicat e código, mobile-first</li>
+      <li>4 anos de prospecção ativa: entendo o que faz alguém comprar</li></ul></div>
+    <div class="card pillar"><h3>Operação e dados</h3><ul>
+      <li>Pixel, CAPI, RedTrack, GTM e UTMs</li>
+      <li>Acompanhamento de CPA, ROI e ROAS</li>
+      <li>Contingência: estrutura reserva, proxy e rotina para a operação não parar</li>
+      <li>Nomenclatura e organização para subir campanhas em volume sem erro</li></ul></div>
+  </div>
+</section>
+
+<section id="design" class="rv">
+  <h2>Design e produtos digitais</h2>
+  <div class="card">
+    <h3>Construo produtos digitais do zero</h3>
+    <p class="mute">Desenvolvi habilidades que vão além de desenhar uma página: construo tudo do zero, da arte e da identidade visual até a landing page, os mockups e o design do produto.</p>
+    <div class="chips">
+      <span class="chip">Construção do zero</span><span class="chip">Direção de arte</span><span class="chip">Identidade visual</span><span class="chip">Landing pages</span><span class="chip">Mockups</span><span class="chip">Design de presell</span><span class="chip">Mobile-first</span>
+    </div>
+  </div>
+  <p class="mute" style="margin:18px 0 0">Alguns trabalhos que fiz 100% por conta própria:</p>
+  <!-- PROJETOS: salve os prints como projeto-1.jpg ... projeto-8.jpg na mesma pasta do index.html -->
+  <div class="projgrid">
+    <div class="card proj"><div class="ph">projeto-1.jpg<img src="projeto-1.jpg" alt="Landing page para nutricionista" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Landing page para nutricionista</h3><p class="mute" style="margin:0">Página 100% em HTML, leve e pensada para converter no celular.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-2.jpg<img src="projeto-2.jpg" alt="Lipezero" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Lipezero</h3><p class="mute" style="margin:0">Infoproduto sobre lipedema, com identidade visual e página criadas do zero.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-3.jpg<img src="projeto-3.jpg" alt="Kit de Ferramentas para Higienizadores" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Kit de Ferramentas para Higienizadores</h3><p class="mute" style="margin:0">Infoproduto para higienizadores de estofados.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-4.jpg<img src="projeto-4.jpg" alt="Destravazap" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Destravazap</h3><p class="mute" style="margin:0">Infoproduto de vendas pelo WhatsApp para prestadores de serviços.</p></div></div>
+  </div>
+  <details class="more">
+    <summary>Ver mais projetos</summary>
+    <div class="projgrid">
+    <div class="card proj"><div class="ph">projeto-5.jpg<img src="projeto-5.jpg" alt="Reset Hormonal" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Reset Hormonal</h3><p class="mute" style="margin:0">Infoproduto de emagrecimento para mulheres acima de 40 anos.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-6.jpg<img src="projeto-6.jpg" alt="Secamax" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Secamax</h3><p class="mute" style="margin:0">Infoproduto de emagrecimento para mulheres acima de 30 anos.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-7.jpg<img src="projeto-7.jpg" alt="Manual do Café Hormonal" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Manual do Café Hormonal</h3><p class="mute" style="margin:0">Infoproduto de receitas para mulheres acima de 40 anos.</p></div></div>
+    <div class="card proj"><div class="ph">projeto-8.jpg<img src="projeto-8.jpg" alt="Higienizador Raiz" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>Higienizador Raiz</h3><p class="mute" style="margin:0">Infoproduto para quem quer começar a trabalhar como higienizador de estofados.</p></div></div>
+    </div>
+  </details>
+</section>
+
+<section class="rv">
+  <h2>Habilidades complementares</h2>
+  <p class="mute" style="max-width:640px">O que me deixa autônomo: crio, edito e meço sem depender de ninguém.</p>
+  <div class="tools" style="margin-top:14px">
+    <div class="card tool"><div class="ico i-ps">Ps</div><div><h3>Photoshop</h3><p class="mute">Criativos, mockups e tratamento de imagem</p></div></div>
+    <div class="card tool"><div class="ico i-ca">Ca</div><div><h3>Canva</h3><p class="mute">Peças rápidas e variações de criativo</p></div></div>
+    <div class="card tool"><div class="ico i-cc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="7" r="2.5"/><circle cx="6" cy="17" r="2.5"/><path d="M8 8.5 20 17M8 15.5 20 7"/></svg></div><div><h3>CapCut</h3><p class="mute">Edição de vídeo para anúncios e VSL</p></div></div>
+    <div class="card tool"><div class="ico i-ac"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><h3>ActiveCampaign</h3><p class="mute">E-mail e automações de nutrição</p></div></div>
+    <div class="card tool"><div class="ico i-ia"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.3L20.5 10l-6.3 1.7L12 18l-2.2-6.3L3.5 10l6.3-1.7zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></div><div><h3>IA no dia a dia</h3><p class="mute">Básico para copy, roteiro e ganho de tempo</p></div></div>
+    <div class="card tool"><div class="ico i-ga"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="16" y="3" width="4" height="17" rx="1"/></svg></div><div><h3>Google Analytics</h3><p class="mute">Leitura de tráfego e comportamento</p></div></div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>Stack</h2>
+  <div class="marq"><div class="track" id="track">
+    <span class="chip">Meta Ads Manager</span><span class="chip">Business Manager</span><span class="chip">Pixel + CAPI</span><span class="chip">RedTrack</span><span class="chip">UTMify / ClickMagic</span><span class="chip">VTurb</span><span class="chip">Google Tag Manager</span><span class="chip">WordPress</span><span class="chip">Atomicat</span><span class="chip">Kiwify / Hotmart</span><span class="chip">E-mail e WhatsApp</span><span class="chip">Multilogin + proxy</span><span class="chip">Spy tools</span><span class="chip">Google Sheets</span>
+  </div></div>
+</section>
+
+<section class="rv">
+  <h2>Formação e desenvolvimento</h2>
+  <div class="grid">
+    <div class="card"><h3>Copywriting</h3><ul><li>Matheus Vakuda</li><li>Ladeira</li><li>Ícaro de Carvalho</li><li>Higão</li></ul></div>
+    <div class="card"><h3>Tráfego pago</h3><ul><li>Pedro Sobral — base, gestão de ativos, métricas</li><li>Pedro Andrade — tráfego direto e Direct Response</li></ul></div>
+    <div class="card"><h3>Tráfego direto</h3><ul><li>Clube da Conversão — Lucas Nóbrega</li></ul></div>
+    <div class="card"><h3>Mentorias</h3><ul><li>Tráfego direto Nutra USA — Rafael Luiz</li><li>Tráfego direto BR — Pedro Kilian</li><li>Mentoria em grupo — Guilherme Bifi</li></ul></div>
+    <div class="card"><h3>Imersões internacionais</h3><ul><li>El Poder Estar en Creer — José Ardon</li><li>One Billion — Ivan Tapia</li></ul></div>
+    <div class="card"><h3>Imersão nacional</h3><ul><li>Protagon — Wendel Carvalho</li></ul></div>
+  </div>
+  <details>
+    <summary>Biblioteca — o que leio e aplico (45+ livros)</summary>
+    <div style="margin-top:14px">
+      <p><b>Persuasão e vendas</b><br><span class="mute">As Armas da Persuasão (Cialdini) · Objeções (Jeb Blount) · Manual de Persuasão do FBI (Jack Schafer) · Jogo do Poder (Henrik Fexeus) · Como Convencer Alguém em 90 Segundos (Boothman) · Gatilhos Mentais (Gustavo Ferreira)</span></p>
+      <p><b>Copy e marketing</b><br><span class="mute">Confissões de um Publicitário (Ogilvy) · Transformando Palavras em Dinheiro (Ícaro de Carvalho) · Clique Aqui (Natanael Oliveira) · Marketing 4.0 (Kotler) · Nocaute (Gary Vee) · A Lógica do Consumo (Lindstrom)</span></p>
+      <p><b>Crescimento e negócios</b><br><span class="mute">Hacking Growth (Sean Ellis) · Tração (Weinberg e Mares) · Scrum (Jeff Sutherland) · Salomão, o Homem Mais Rico que Já Existiu</span></p>
+      <p><b>Liderança (John Maxwell)</b><br><span class="mute">17 Princípios do Trabalho em Equipe · 21 Qualidades Indispensáveis de um Líder · Liderando para o Sucesso · Todos se Comunicam, Poucos se Conectam · Até Onde Você Vai · Você Pode Realizar seu Sonho · O Sucesso Está em Você · Você Faz a Diferença · Você Nasceu para Liderar</span></p>
+      <p><b>Produtividade e hábitos</b><br><span class="mute">Essencialismo (McKeown) · Micro-hábitos (BJ Fogg) · Comece pelo Mais Difícil (Brian Tracy) · A Tríade do Tempo (Christian Barbosa) · Ultra Aprendizado (Scott Young) · Pare de Tentar, Comece a Fazer (Júlia Kristina)</span></p>
+      <p style="margin:0"><b>Mentalidade</b><br><span class="mute">Poder sem Limites e Passos de Gigante (Tony Robbins) · Quem Pensa Enriquece e As 16 Leis do Sucesso (Napoleon Hill) · 12 Regras para a Vida (Jordan Peterson) · O Poder do Subconsciente (Joseph Murphy) · Psicocibernética (Maxwell Maltz) · Davi e Golias (Gladwell) · O Jeito Harvard de Ser Feliz (Shawn Achor) · O Óbvio que Ignoramos (Jacob Petry) · Nascido para o Sucesso (Colin Turner) · Seja Foda (Caio Carneiro) · Sobre a Escrita (Stephen King)</span></p>
+    </div>
+  </details>
+</section>
+
+<section id="lifestyle" class="rv">
+  <h2>Lifestyle</h2>
+  <p class="mute" style="max-width:640px">Um pouco sobre mim e o meu porquê.</p>
+  <!-- FOTOS: lifestyle-1.jpg ... lifestyle-5.jpg na mesma pasta do index.html -->
+  <div class="gallery" style="margin-top:14px">
+    <div class="ph">lifestyle-1.jpg<img src="lifestyle-1.jpg" alt="Lifestyle 1" loading="lazy" onerror="this.remove()"></div>
+    <div class="ph">lifestyle-2.jpg<img src="lifestyle-2.jpg" alt="Lifestyle 2" loading="lazy" onerror="this.remove()"></div>
+    <div class="ph">lifestyle-3.jpg<img src="lifestyle-3.jpg" alt="Lifestyle 3" loading="lazy" onerror="this.remove()"></div>
+    <div class="ph">lifestyle-4.jpg<img src="lifestyle-4.jpg" alt="Lifestyle 4" loading="lazy" onerror="this.remove()"></div>
+    <div class="ph">lifestyle-5.jpg<img src="lifestyle-5.jpg" alt="Lifestyle 5" loading="lazy" onerror="this.remove()"></div>
+  </div>
+  <div class="btns"><a class="btn o" href="https://www.instagram.com/cesarlibarino/" target="_blank" rel="noopener">Ver meu Instagram</a></div>
+</section>
+
+<section class="rv">
+  <h2>Sobre</h2>
+  <p>Atuo no mercado digital há cerca de 5 anos, com foco em tráfego pago, geração de leads e estruturação de funis de vendas para infoprodutos e negócios locais. Antes disso, passei 4 anos fazendo a expansão no Brasil de uma empresa americana do mercado financeiro (forex). Lá, colocava a mão na massa na prospecção ativa de vendas e também ministrava treinamentos para a base de clientes e equipes no país.</p>
+  <p>Foi nessa escola prática que entendi a fundo sobre abordagem, geração de oportunidades e o que realmente faz alguém comprar. Depois disso, fui convidado pelo meu líder para ser sócio minoritário de uma nova operação de educação e mercado financeiro. Fiquei à frente da estratégia de marketing, tráfego, infraestrutura e funis até meados de 2025.</p>
+  <p>De lá para cá, sigo construindo e operando projetos próprios de low ticket, parcerias com experts e negócios locais para fazer o digital acontecer de verdade. Sou executor, gosto de números na mesa e aprendi jogando: testando, errando, ajustando. Fora do trabalho, viajo e toco (ex-músico).</p>
+</section>
+
+<section class="rv">
+  <h2>Disponível para</h2>
+  <div class="grid">
+    <div class="card main-card"><h3>Vaga em agência ou empresa</h3><p class="mute" style="margin:0">Gestão de tráfego e apoio na estrutura do funil: Meta Ads, copy, páginas e tracking com um só responsável.</p></div>
+    <div class="card"><h3>Projetos com experts</h3><p class="mute" style="margin:0">Funil, páginas e tráfego, ou só uma etapa dele.</p></div>
+    <div class="card"><h3>Parcerias</h3><p class="mute" style="margin:0">Operações em sociedade com oferta validada.</p></div>
+  </div>
+</section>
+
+<footer class="rv">
+  <h2>Vamos conversar?</h2>
+  <div class="btns" style="justify-content:center">
+    <a class="btn" href="https://wa.me/5531996313037" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn o" href="mailto:cesarlibarinocontato@gmail.com">E-mail</a>
+    <a class="btn o" href="https://www.linkedin.com/in/SEUPERFIL" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+</div>
+<script>
+document.getElementById('theme').addEventListener('click',function(){
+  var r=document.documentElement;
+  var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+  r.setAttribute('data-theme',dark?'light':'dark');
+});
+// Stack: duplica os itens para o carrossel rodar em loop contínuo
+var t=document.getElementById('track');
+t.innerHTML+=t.innerHTML.replace(/class="chip"/g,'class="chip" aria-hidden="true"');
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Revelação das seções + contagem dos números
+function count(el){
+  var n=+el.dataset.count,i=0;
+  if(reduce)return;
+  el.textContent=0;
+  var iv=setInterval(function(){i++;el.textContent=i;if(i>=n)clearInterval(iv)},140);
+}
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('on');
+      e.target.querySelectorAll('[data-count]').forEach(count);
+      io.unobserve(e.target);}
+  })},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(s){io.observe(s)});
+}else{document.querySelectorAll('.rv').forEach(function(s){s.classList.add('on')})}
+</script>
+</body>
+</html>
